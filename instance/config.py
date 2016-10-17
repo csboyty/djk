@@ -1,0 +1,16 @@
+# coding:utf-8
+
+DEBUG = True
+
+SECRET_KEY = 'djk1438572082'
+SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://dbuser:dbpassword@192.168.1.71:5432/djk'
+SQLALCHEMY_ECHO = True
+
+CELERY_BROKER_URL = "redis://localhost:6379/1"
+CELERY_RESULT_BACKEND = "redis://localhost:6379/1"
+CELERY_DEFAULT_QUEUE = "djk"
+CELERY_TASK_SERIALIZER = "json"
+CELERY_ACCEPT_CONTENT = ["json"]
+CELERY_RESULT_SERIALIZER = "json"
+CELERY_TIMEZONE = 'Etc/GMT-8'
+CELERY_ENABLE_UTC = True

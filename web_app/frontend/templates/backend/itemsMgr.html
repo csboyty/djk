@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include "backend/head.html" %}
+    <link href="static/backend/css/lib/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="static/backend/css/lib/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <link href="static/backend/css/lib/jquery.toastmessage.css" rel="stylesheet" type="text/css">
+    <link href="static/backend/css/src/main.css" rel="stylesheet" type="text/css">
+    <script src="static/backend/js/lib/jquery-2.0.3.min.js"></script>
+    <script src="static/backend/js/lib/bootstrap.min.js"></script>
+    <script src="static/backend/js/lib/jquery.dataTables.min.js"></script>
+    <script src="static/backend/js/lib/jquery.toastmessage.js"></script>
+    <script src="static/backend/js/src/config.js"></script>
+    <script src="static/backend/js/src/functions.js"></script>
+    <script src="static/backend/js/src/itemsMgr.js"></script>
+</head>
+<body>
+
+{% include "backend/header.html" %}
+
+<nav class="left">
+
+    {% include "backend/menu.html" %}
+
+</nav>
+
+<section class="right">
+    <article class="main">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1 class="panel-title">素材管理</h1>
+            </div>
+            <div class="panel-body" id="opt-body">
+                <div class="input-group tableSearchContainer col-md-6">
+                    <input type="text" id="searchTitle" class="form-control" placeholder="名称">
+                    <span class="input-group-btn">
+                        <button id="searchBtn" class="btn btn-default" type="button">搜索</button>
+                    </span>
+                </div>
+                <a class="btn btn-success" href="admin/fixtures/create">添加</a>
+                <table id="myTable" class="dataTable">
+                    <thead>
+                    <tr>
+                        <th>缩略图</th>
+                        <th>标题</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<tr>
+                        <td><a href="#" target="_blank"><img class='thumb' src="data/200x200/1.jpg"></a></td>
+                        <td>鼓楼</td>
+                        <td><a href="1" class="delete">删除</a></td>
+                    </tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </article>
+</section>
+
+{% include "backend/loading.html" %}
+
+</body>
+</html>

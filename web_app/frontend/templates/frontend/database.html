@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include "frontend/head.html" %}
+    <link type="text/css" href="static/frontend/css/lib/flexslider.css" rel="stylesheet">
+    <link type="text/css" href="static/frontend/css/src/main.css" rel="stylesheet">
+    <script>
+        var pageName="database";
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    {% include "frontend/header.html" %}
+
+    <script type="text/template" id="selectedItemTpl">
+        <li class="item" data-type="${type}" data-value="${value}">${name}</li>
+    </script>
+
+    <script type="text/template" id="waterfallTpl">
+        {@each results as r}
+        <li class="waterfall-item">
+            <a href="fixtures/${r.Fixture.id}" target="_blank">
+                <div class="thumbContainer">
+                    <img src="${r.Fixture.profile.url}" width="${r.Fixture.profile.width}" height="${r.Fixture.profile.height}">
+                    <div class="info">
+
+                        <div class="row">
+                            <h3 class="title">种类</h3>
+                            <ul class="list list1">
+                                {@each r.Fixture.tags as t }
+                                {@if t.category=="1"}
+                                <li class="item">${t.name}</li>
+                                {@/if}
+                                {@/each}
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <h3 class="title">色彩</h3>
+                            <ul class="list list1">
+                                {@each r.Fixture.tags as t }
+                                {@if t.category=="2"}
+                                <li class="item">${t.name}</li>
+                                {@/if}
+                                {@/each}
+                            </ul>
+                        </div>
+
+                        <div class="row">
+                            <h3 class="title">构图</h3>
+                            <ul class="list list1">
+                                {@each r.Fixture.tags as t }
+                                {@if t.category=="3"}
+                                <li class="item">${t.name}</li>
+                                {@/if}
+                                {@/each}
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <h3 class="title">功能</h3>
+                            <ul class="list list1">
+                                {@each r.Fixture.tags as t }
+                                {@if t.category=="4"}
+                                <li class="item">${t.name}</li>
+                                {@/if}
+                                {@/each}
+                            </ul>
+                        </div>
+                        <div class="row">
+                            <h3 class="title">格式</h3>
+                            <ul class="list list1">
+                                {@each r.Fixture.tags as t }
+                                {@if t.category=="5"}
+                                <li class="item">${t.name}</li>
+                                {@/if}
+                                {@/each}
+                            </ul>
+                        </div>
+
+                        <div class="row">
+                            <h3 class="title">图纹</h3>
+                            <ul class="list list1">
+                                {@each r.Fixture.patterns as p}
+                                <li class="item">${p.name}</li>
+                                {@/each}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="title ellipsis">${r.Fixture.name}</p>
+            </a>
+        </li>
+        {@/each}
+    </script>
+
+    <div class="main">
+        <div class="content">
+            <div class="navTip">
+                <span class="item">关于侗锦</span>
+                <span class="item">&gt;</span>
+                <ul class="list2" id="selectedItems">
+
+                </ul>
+            </div>
+
+            <div class="section" id="searchItems">
+                {% set categories=tags_by_category %}
+                <div class="row">
+                    <h3 class="title">种类</h3>
+                    <ul class="list">
+                        {% for c in categories["1"] %}
+                        <li class="item" data-name="{{c.name}}" data-value="{{c.id}}">{{c.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row">
+                    <h3 class="title">色彩</h3>
+                    <ul class="list">
+                        {% for c in categories["2"] %}
+
+                        <li class="item" data-name="{{c.name}}" data-value="{{c.id}}">{{c.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row">
+                    <h3 class="title">构图</h3>
+                    <ul class="list">
+                        {% for c in categories["3"] %}
+                        <li class="item" data-name="{{c.name}}" data-value="{{c.id}}">{{c.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row">
+                    <h3 class="title">功能</h3>
+                    <ul class="list">
+                        {% for c in categories["4"] %}
+                        <li class="item" data-name="{{c.name}}" data-value="{{c.id}}">{{c.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row">
+                    <h3 class="title">格式</h3>
+                    <ul class="list">
+                        {% for c in categories["5"] %}
+                        <li class="item" data-name="{{c.name}}" data-value="{{c.id}}">{{c.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="row">
+                    <h3 class="title">图纹</h3>
+                    <ul class="list">
+                        {% for p in patterns %}
+                        <li class="item" data-type="pattern" data-name="{{p.name}}" data-value="{{p.id}}">{{p.name}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+
+            </div>
+            <div class="seg">隔断</div>
+            <div class="section">
+                <div class="row">
+                    <ul class="list" id="sortList">
+                        <li class="item active" data-value="newest">最新发布</li>
+                        <li class="item" data-value="downloads">热门下载</li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="waterfallContainer" id="waterfallContainer">
+
+            </ul>
+        </div>
+    </div>
+
+    {% include "frontend/footer.html" %}
+</div>
+<script src="static/frontend/js/lib/jquery-1.11.1.min.js"></script>
+<script src="static/frontend/js/lib/waterfall.js"></script>
+<script src="static/frontend/js/lib/juicer-min.js"></script>
+<script src="static/frontend/js/src/config.js"></script>
+<script src="static/frontend/js/src/functions.js"></script>
+<script src="static/frontend/js/src/database.js"></script>
+</body>
+</html>

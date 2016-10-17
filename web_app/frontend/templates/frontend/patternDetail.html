@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+   {% include "frontend/head.html" %}
+    <link type="text/css" href="static/frontend/css/lib/flexslider.css" rel="stylesheet">
+    <link type="text/css" href="static/frontend/css/src/main.css" rel="stylesheet">
+    <script>
+        var pageName="database";
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    {% include "frontend/header.html" %}
+
+    <div class="main">
+        <div class="content single">
+            <div class="navTip">
+                <span class="item">关于侗锦</span>
+                <span class="item">&gt;</span>
+                <span class=" item current">侗锦图库</span>
+            </div>
+            <div class="detail">
+                <div id="slider" class="flexslider">
+                    <ul class="slides">
+                        {% for pa in pattern.assets %}
+                        <li>
+                            <img src="{{pa.profile_file}}" />
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div id="carousel" class="flexslider flex-carousel">
+                    <ul class="slides">
+                        {% for pa in pattern.assets %}
+                        <li>
+                            <img src="{{pa.profile_file}}" />
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="resourceContainer">
+                    <h3>推荐资源</h3>
+                    <div id="carousel1" class="flexslider flex-carousel">
+                        <ul class="slides">
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/1.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/2.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/3.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/3.jpg" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="aside">
+                <h3 class="title">{{pattern.name}}</h3>
+                <span class="downloadCount">{{pattern.download_times}}</span>
+                <p class="description">{{pattern.intro}}</p>
+                <a class="link link2" target="_blank" href="patterns/{{pattern.id}}/download">下载</a>
+                <div class="info">
+                    <h3>参考文献</h3>
+                    <ul class="list4" id="postList">
+                        {% for pf in pattern.references %}
+                        {% if loop.index==1 %}
+                        <li class="item">
+                            <h3 class="title opened">{{pf.name}}</h3>
+                            <div class="content">{{pf.intro}}</div>
+                        </li>
+                        {% else %}
+                        <li class="item">
+                            <h3 class="title closed">{{pf.name}}</h3>
+                            <div class="content">{{pf.intro}}</div>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include "frontend/footer.html" %}
+</div>
+<script src="static/frontend/js/lib/jquery-1.11.1.min.js"></script>
+<script src="static/frontend/js/lib/jquery.flexslider-min.js"></script>
+<script src="static/frontend/js/src/config.js"></script>
+<script src="static/frontend/js/src/functions.js"></script>
+<script src="static/frontend/js/src/patternDetail.js"></script>
+</body>
+</html>

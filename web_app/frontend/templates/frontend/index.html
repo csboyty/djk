@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+   {% include "frontend/head.html" %}
+   <link type="text/css" href="static/frontend/css/lib/flexslider.css" rel="stylesheet">
+   <link type="text/css" href="static/frontend/css/src/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="wrapper">
+
+    {% include "frontend/header.html" %}
+
+    <div class="main">
+        <div class="redLine">红色的线</div>
+        <div class="flexslider">
+            <ul class="slides">
+                {% for f in fixtures %}
+                <li>
+                    <a href="fixtures/{{f.id}}">
+                        <img src="{{f.cover}}" />
+                       <!-- <p class="flex-caption">{{f.name}}</p>-->
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    {% include "frontend/footer.html" %}
+</div>
+<script src="static/frontend/js/lib/jquery-1.11.1.min.js"></script>
+<script src="static/frontend/js/lib/jquery.flexslider-min.js"></script>
+<script src="static/frontend/js/src/roll.js"></script>
+</body>
+</html>

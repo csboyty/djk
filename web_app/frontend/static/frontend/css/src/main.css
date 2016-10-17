@@ -1,0 +1,663 @@
+body{
+    font-family: Arial,"微软雅黑","黑体","宋体";
+    padding: 0px;
+    margin: 0px;
+    background: #fff;
+}
+a{
+    text-decoration: none!important;
+    box-sizing: content-box;
+}
+ul{
+    margin: 0px;
+    padding: 0px;
+}
+li{
+    list-style: none;
+}
+img{
+    border: none;
+    display: block;
+    max-width: 100%;
+}
+/*通用类*/
+.hidden{
+    display: none!important;
+}
+.goToTop{
+    background: url(../../images/app/iconToTop.png) no-repeat;
+    width: 33px;
+    display: block;
+    position: fixed;
+    font-size: 12px;
+    text-align: center;
+    white-space: nowrap;
+    color: #a9a9a9;
+    padding-top: 35px;
+    bottom:80px;
+    left:64%;
+    cursor: pointer;
+    z-index: 100;
+}
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.wrapper{
+    min-width: 1024px;
+    max-width:1920px;
+    margin: auto;
+}
+.header{
+    position: relative;
+    background: #2e3741;
+    height: 190px;
+}
+.header .leftTopBg{
+    width: 1024px;
+    height: 34px;
+    background: url(../../images/app/headerTopLeftBg.png) repeat-x;
+    font-size: 0px;
+    position: absolute;
+    top:5px;
+    left:0px;
+}
+.header .searchContainer{
+    width: 200px;
+    height: 20px;
+    position: absolute;
+    right:100px;
+    top:15px;
+}
+.header .searchContainer .content{
+    background: #f0f0f0;
+    color: #a9a9a9;
+    font-size: 12px;
+    border: none;
+    height: 100%;
+    width: 100%;
+}
+.header .searchContainer .btn{
+    font-size: 0px;
+    border: none;
+    width: 21px;
+    height: 16px;
+    position: absolute;
+    right: 0px;
+    top:4px;
+    cursor: pointer;
+    background: url(../../images/app/iconArrowRightRed.png) no-repeat;
+}
+/**
+* main
+*/
+.main{
+    min-height: 500px;
+    background: #f6f6f6;
+    position: relative;
+}
+.main1{
+    background: #2D3942;
+}
+.main>.content{
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+.main .seg{
+    font-size: 0px;
+    height: 5px;
+    background: url(../../images/app/iconDotWhiteTwo.png) repeat-x;
+    margin: 8px 0px;
+}
+.redLine{
+    position: absolute;
+    top:0px;
+    left:10%;
+    width: 166px;
+    font-size: 0px;
+    z-index:8;
+    height: 10px;
+    background: #b7282c;
+}
+/**
+*链接
+*/
+.link{
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    height: 29px;
+    width: 162px;
+    line-height: 29px;
+    font-weight: normal;
+    background: url(../../images/app/linkBg.png) no-repeat;
+    text-align: center;
+}
+.link1{
+    margin-left: 3%;
+}
+.link2{
+    margin-left: 8%;
+}
+.link3{
+    margin: 50px auto 50px auto;
+    display: block;
+}
+/**
+*footer
+*/
+.footer .top{
+    height: 21px;
+    width: 100%;
+    padding-top: 10px;
+    font-size: 0px;
+    background: url(../../images/app/iconPeopleBlack.png) 10px center repeat-x #f0f0f0;
+}
+.footer .bottom{
+    height: 141px;
+    width: 100%;
+    background: url(../../images/app/footerBottomBg.png) repeat-x;
+    position: relative;
+}
+.footer .bottom .copyRight{
+    font-size: 14px;
+    color: #f0f0f0;
+    width: 100%;
+    height: 21px;
+    text-align: center;
+    line-height: 21px;
+    position: absolute;
+    bottom:0px;
+    left:0px;
+}
+/**
+*logo
+*/
+.logo{
+    position: absolute;
+    left:10%;
+    bottom:-1px;
+    z-index: 10;
+    margin: 0px;
+}
+.logo a{
+    font-size: 0px;
+    display: block;
+    width: 171px;
+    height: 141px;
+    background: url(../../images/app/logo.png) no-repeat;
+}
+/*
+*menu
+*/
+.menu{
+    position: absolute;
+    right: 10%;
+    top: 90px;
+    z-index: 10;
+    font-size: 0px;
+}
+.menu li{
+    display: inline-block;
+}
+.menu li a{
+    display: block;
+    border-left:1px #fff solid;
+    font-size: 12px;
+    color: #fff;
+    width: 130px;
+    font-weight: bold;
+    height: 50px;
+    padding-top: 50px;
+    padding-left: 20px;
+}
+.menu li a.active{
+    background: url(../../images/app/menuItemActiveBg.png) no-repeat;
+    height: 62px;
+}
+.menu li a span{
+    font-size: 16px;
+}
+
+
+/**
+*navTip
+*/
+.navTip{
+    padding:20px 0px;
+    height: 20px;
+    line-height: 20px;
+}
+.navTip>.item{
+    font-size: 14px;
+    color: #a9a9a9;
+    display: inline-block;
+    height: 100%;
+    margin: 0px 10px 0px 0px;
+    vertical-align: top;
+}
+.navTip>.item.active{
+    color: #fefefe;
+}
+
+/**
+*页面中上部的白色选择区域
+*/
+.section{
+    background: #fff;
+    padding:10px 20px;
+}
+
+/**
+*row
+*/
+.row{
+    margin: 10px 0px;
+}
+.row .title{
+    color: #2e3741;
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    margin: 0px;
+    height: 20px;
+    line-height: 20px;
+    width: 5%;
+    vertical-align: top;
+}
+.row1 .title{
+    color: #fefefe;
+    width: 20%;
+}
+.row2 .title{
+    width: 13%;
+}
+.row2 .list{
+    width: 75%;
+}
+.row2 .list .item:hover{
+    cursor: default;
+    color: #a9a9a9;
+    border: none;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+/**
+*cols
+*/
+.colThree .col{
+    display: inline-block;
+    vertical-align: middle;
+}
+.colThree .thumb{
+    width: 10%;
+    height: auto;
+}
+.colThree .description{
+    font-size: 14px;
+    color: #3e3a39;
+    height: 100%;
+    line-height: 21px;
+    overflow: hidden;
+    width: 60%;
+    margin-left: 3%;
+}
+/**
+*lists
+*/
+/*页面中上部的选择list*/
+.list{
+    display: inline-block;
+    width: 90%;
+    vertical-align: top;
+}
+.list .item{
+    display: inline-block;
+    margin: 0px 20px;
+    font-size: 14px;
+    color: #a9a9a9;
+    cursor: pointer;
+    height: 20px;
+    line-height: 20px;
+}
+.list .item:hover,.list .item.active{
+    border-bottom: 2px #b7282c dotted;
+    color: #b7282c;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*卡片里面的种类等*/
+.list1{
+    width: 75%;
+}
+.list1 .item{
+    color: #fefefe;
+}
+.list1 .item:hover{
+    border:none;
+    color: #fefefe;
+}
+/*已选择的list*/
+.list2{
+    display: inline-block;
+}
+.list2 .item{
+    display: inline-block;
+    padding: 3px 15px 3px 5px;
+    background: #b7282c url(../../images/app/iconDelete.png) no-repeat 94% center;
+    color: #fff;
+    cursor:pointer;
+    font-size: 14px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing:border-box;
+    vertical-align: top;
+}
+/**详情里面的主要图纹*/
+.list3{
+    font-size: 0px;
+}
+.list3 .item{
+    width: 30%;
+    margin-right: 5%;
+    display: inline-block;
+}
+.list3 .item:nth-child(3n){
+    margin-right: 0px;
+}
+.list3 .item a{
+
+}
+.list3 .item .thumb{
+    width: 100%;
+    height: auto;
+}
+.list3 .item .title{
+    font-size: 14px;
+    color: #a9a9a9;
+    text-align: center;
+}
+/*参考文献*/
+.list4{
+    background: #fff;
+    padding: 10px;
+}
+.list4 .item{
+
+}
+.list4 .item .title{
+    color: #a9a9a9;
+    font-size: 14px;
+    padding-left: 15px;
+    line-height: 21px;
+    font-weight: normal;
+    cursor: pointer;
+}
+.list4 .item .opened{
+    background: url(../../images/app/iconSub.png) no-repeat 2px 8px;
+}
+.list4 .item .closed{
+    background: url(../../images/app/iconPlus.png) no-repeat 2px 5px;
+}
+.list4 .item .content{
+    font-size: 14px;
+    color: #3e3a39;
+    line-height: 21px;
+    padding-left: 15px;
+}
+/*关于里面的目录*/
+.list5{
+    background: url(../../images/app/directoryBg.png) no-repeat;
+    height: 462px;
+    margin-top: 20px;
+    padding-top: 30px;
+}
+.list5 .item{
+
+}
+.list5 .item a{
+    margin-top: 30px;
+    padding-left: 20%;
+    color: #2e3741;
+    font-size: 14px;
+    display: block;
+    line-height: 32px;
+}
+.list5 .item:first-child a{
+    margin-top: 0px;
+}
+.list5 .item a:hover,.list5 .item a.active{
+    background: url(../../images/app/directoryItemBg.png) no-repeat;
+    color: #fff;
+}
+
+/**
+*waterfall-item
+*/
+.waterfallContainer{
+    margin-top: 20px;
+}
+.waterfall-item{
+
+}
+.waterfall-item img{
+    display: block;
+}
+.waterfall-item .thumbContainer{
+    overflow: hidden;
+    position: relative;
+}
+.waterfall-item a>.title{
+    background: #fefefe;
+    color: #3e3a39;
+    font-size: 12pt;
+    margin: 0px;
+    padding: 5px;
+    height: 20px;
+    line-height: 20px;
+}
+.waterfall-item .thumbContainer .info{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top:100%;
+    padding: 10%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    left:0px;
+    color: #fefefe;
+    background: rgba(183,40,44,0.8);
+    transition:all .2s ease-in;
+    -webkit-transition:all .2s ease-in;
+    -moz-transition:all .2s ease-in;
+}
+.waterfall-item .row .title{
+    color: #fff;
+    width: 40px;
+}
+.waterfall-item .thumbContainer:hover .info{
+    top:0px;
+}
+
+/**
+* slide/carousel
+*/
+.flexslider{
+    border: none;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+.flexslider .slides > li {
+    position: relative;
+}
+.flexslider .flex-caption {
+    font-size: 33px;
+    color: #2e3741;
+    bottom: 200px;
+    left: 10%;
+    text-align: left;
+    right: 60%;
+    position: absolute;
+    text-align: left;
+}
+
+.flex-control-nav{
+    bottom:20px;
+}
+.flex-control-paging li a{
+    width: 18px;
+    height: 21px;
+    background: url(../../images/app/iconPeopleGray.png) no-repeat;
+    border-radius: 0px;
+    border: none;
+    box-shadow: none;
+}
+.flex-control-paging li a:hover{
+    background: url(../../images/app/iconPeopleRed.png) no-repeat;
+}
+.flex-control-paging li a.flex-active{
+    background: url(../../images/app/iconPeopleRed.png) no-repeat;
+}
+.flex-carousel{
+    margin: 20px auto 20px auto;
+    background: #f6f6f6;
+}
+/**--------------------------------------------------图库--------------------------------*/
+.tyPhotoDetail{
+    position: relative;
+    margin-right:250px;
+}
+.tyPhotoDetail img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.tyPhotoDetail .name{
+    padding: 10px;
+    color: #fefefe;
+    background: rgba(46,55,65,.5);
+    width: 100%;
+    font-size: 14px;
+    position: absolute;
+    bottom:30px;
+    right:0px;
+    margin: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.tyPhotoDetail .page{
+    text-align: center;
+    font-size: 14px;
+    color: #a9a9a9;
+}
+.tyPhotoDetail .page .currentPage{
+    color: #fefefe;
+}
+.tyPhotos{
+    width: 240px;
+    overflow: hidden;
+    position: absolute;
+    top:60px;
+    right:0px;
+    bottom:40px;
+}
+.tyPhotos .nav{
+    position: absolute;
+    width: 33px;
+    display: block;
+    height: 20px;
+    cursor: pointer;
+    font-size: 0px;
+}
+.tyPhotos .nav1{
+    top:10px;
+    left:50%;
+    margin-left: -16px;
+    background: url(../../images/app/iconUpGray.png) no-repeat;
+}
+.tyPhotos .nav2{
+    bottom:10px;
+    right:50%;
+    margin-right: -16px;
+    background: url(../../images/app/iconDownGray.png) no-repeat;
+}
+.tyPhotos .nav1:hover{
+    background: url(../../images/app/iconUpRed.png) no-repeat;
+}
+.tyPhotos .nav2:hover{
+    background: url(../../images/app/iconDownRed.png) no-repeat;
+}
+.tyPhotos .list{
+
+}
+.tyPhotos .list li{
+
+}
+.tyPhotos .list li img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+/*-------------------------------------------------------------单个详情页面--------------------------------------*/
+.single .detail{
+    width: 62%;
+    padding-right: 3%;
+    border-right:1px dashed #ccc;
+    display: inline-block;
+}
+.single .detail .postSection{
+    display: block;
+    margin: 0px 0px 40px 0px;
+    max-width: 100%;
+}
+.single .aside{
+    width: 30%;
+    position: absolute;
+    left:65%;
+    top:60px;
+}
+.single .aside>.title{
+    color: #2e3741;
+    font-size: 18px;
+    margin: 0px;
+    padding-left:8%;
+}
+.single .aside .info{
+    padding-left:8%;
+    border-top: 1px dashed #ccc;
+    margin-top: 20px;
+}
+.single .aside .info1{
+    position: fixed;
+    top: 20px;
+    width: 24%;
+    padding-left: 2%;
+}
+.single .aside .description{
+    color:#3e3a39;
+    font-size: 14px;
+    margin-left: 8%;
+}
+.single .aside .downloadCount{
+    background: url(../../images/app/iconDownload.png) no-repeat 2px center;
+    height: 21px;
+    font-size: 14px;
+    line-height: 21px;
+    padding-left: 25px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.resourceContainer{
+    border-top: 1px dashed #ccc;
+    margin-right: -5%;
+    padding-right: 5%;
+    margin-bottom: 50px;
+    margin-top: 100px;
+}

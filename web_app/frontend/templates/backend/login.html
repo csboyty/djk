@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include "backend/head.html" %}
+    <link type="text/css" rel="stylesheet" href="static/backend/css/src/login.css">
+    <script src="static/backend/js/lib/jquery-2.0.3.min.js"></script>
+    <script src="static/backend/js/lib/jquery.validate.min.js"></script>
+    <script src="static/backend/js/src/config.js"></script>
+    <script src="static/backend/js/src/functions.js"></script>
+    <script src="static/backend/js/src/login.js"></script>
+</head>
+<body>
+
+    <form class="pCenter" id="myForm" method="post" action="login" name="login_user_form">
+        <span class="loginIcon">登陆图标</span>
+        <h1 class="logo">xxxx</h1>
+        <div class="row">
+            <label class="ctrlLabel">邮箱</label>
+            <input id="email" class="ctrlInput icon1 bgLc" type="text" name="email">
+        </div>
+        <div class="row">
+            <label  class="ctrlLabel">密码</label>
+            <input id="password" class="ctrlInput icon2 bgLc" type="password" name="password">
+        </div>
+        <div class="row">
+            <input type="submit" class="ctrlBtn" value="登陆">
+        </div>
+        {% if data.info %}
+        <label class="error tCenter">错误提示</label>
+        {% endif %}
+    </form>
+</body>
+</html>

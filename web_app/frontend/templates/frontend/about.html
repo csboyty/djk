@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   {% include "frontend/head.html" %}
+    <link type="text/css" href="static/frontend/css/src/main.css" rel="stylesheet">
+    <script>
+        var pageName="about";
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    {% include "frontend/header.html" %}
+
+    <div class="main">
+        <div class="content single">
+            <div class="navTip">
+                <span class="item">关于侗锦</span>
+                <span class="item">&gt;</span>
+                <span class=" item current">侗锦图库</span>
+            </div>
+            <div class="detail" style="border: none">
+
+                <img class="postSection" id="section1" src="static/frontend/images/about/1.png" />
+
+                <img class="postSection" id="section2" src="static/frontend/images/about/2.png" />
+
+                <img class="postSection" id="section3" src="static/frontend/images/about/3.png" />
+
+                <img class="postSection" id="section4" src="static/frontend/images/about/4.png" />
+
+                <img class="postSection" id="section5" src="static/frontend/images/about/5.png" />
+
+                <img class="postSection" id="section6" src="static/frontend/images/about/6.png" />
+
+                <img class="postSection" id="section7" src="static/frontend/images/about/7.png" />
+
+            </div>
+            <div class="aside">
+                <img src="static/data/1600x450/4.jpg">
+                <a class="link link3" href="images">侗锦图库</a>
+                <div class="info">
+                    <ul class="list5" id="directory">
+                        <li class="item">
+                           <a href="#section1" class="active">概述&nbsp;/&nbsp;侗锦溯源</a>
+                        </li>
+                        <li class="item">
+                            <a href="#section2">工艺&nbsp;/&nbsp;织绣挑贴</a>
+                        </li>
+                        <li class="item">
+                            <a href="#section3">色彩&nbsp;/&nbsp;和谐</a>
+                        </li>
+                        <li class="item">
+                            <a href="#section4">构图&nbsp;/&nbsp;繁密严谨</a>
+                        </li>
+                        <li class="item">
+                            <a href="#section5">用途&nbsp;/&nbsp;生活之美</a>
+                        </li>
+                        <li class="item">
+                            <a href="#section6">图案&nbsp;/&nbsp;“活化石”</a>
+                        </li>
+                        <li class="item">
+                            <a href="#section7">发展&nbsp;/&nbsp;传承&nbsp;&nbsp;创新</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+           <!-- <span class="goToTop hidden">回顶部</span>-->
+        </div>
+    </div>
+
+    {% include "frontend/footer.html" %}
+</div>
+<script src="static/frontend/js/lib/jquery-1.11.1.min.js"></script>
+<script src="static/frontend/js/src/about.js"></script>
+</body>
+</html>

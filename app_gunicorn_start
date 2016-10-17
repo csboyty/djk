@@ -1,0 +1,15 @@
+#! /bin/bash
+
+NAME="djk"
+DJK_DIR=/home/dev/workspaces/python-workspace/projects/djk
+VENV_DIR=/home/dev/workspaces/python-workspace/flask-env
+
+echo "Starting $NAME"
+
+cd $VENV_DIR
+source bin/activate
+
+cd $DJK_DIR
+
+exec gunicorn app:application -c gunicorn_app_config.py
+

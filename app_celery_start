@@ -1,0 +1,17 @@
+#! /bin/bash
+
+SZ_DIR=/home/dev/workspaces/python-workspace/projects/djk
+VENV_DIR=/home/dev/workspaces/python-workspace/flask-env
+USER=dev
+GROUP=dev
+
+
+cd $VENV_DIR
+source bin/activate
+
+cd $SZ_DIR
+
+export PSYCOGREEN=true
+
+exec celery worker -A web_app.tasks -P gevent -Q djk --loglevel=INFO --logfile logs/celery.log
+

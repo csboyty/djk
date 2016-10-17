@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include "frontend/head.html" %}
+    <link type="text/css" href="static/frontend/css/lib/flexslider.css" rel="stylesheet">
+    <link type="text/css" href="static/frontend/css/src/main.css" rel="stylesheet">
+    <script>
+        var pageName="database";
+    </script>
+</head>
+<body>
+<div class="wrapper">
+
+    {% include "frontend/header.html" %}
+
+    <div class="main">
+        <div class="content single">
+            <div class="navTip">
+                <span class="item">关于侗锦</span>
+                <span class="item">&gt;</span>
+                <span class=" item current">侗锦图库</span>
+            </div>
+            <div class="detail">
+                <div id="slider" class="flexslider">
+                    <ul class="slides">
+                        {% for fa in fixture.assets %}
+                        <li>
+                            <img src="{{fa.profile_file}}" />
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div id="carousel" class="flexslider flex-carousel">
+                    <ul class="slides">
+                        {% for fa in fixture.assets %}
+                        <li>
+                            <img src="{{fa.profile_file}}" />
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <h3>主要图文</h3>
+                <ul class="list3">
+                    {% for fp in fixture.patterns %}
+                    <li class="item">
+                        <a href="patterns/{{fp.id}}">
+                            <img class="thumb" src="{{fp.profile}}">
+                            <p class="title">{{fp.name}}</p>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="resourceContainer">
+                    <h3>推荐资源</h3>
+                    <div id="carousel1" class="flexslider flex-carousel">
+                        <ul class="slides">
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/1.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/2.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/3.jpg" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/2.png" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="fixtures/2">
+                                    <img src="static/data/200x200/3.jpg" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="aside">
+                <h3 class="title">{{fixture.name}}</h3>
+                <span class="downloadCount">{{fixture.download_times}}</span>
+                <p class="description">{{fixture.intro}}</p>
+                {% set tags=fixture.tags %}
+                <div class="info">
+                    <h3>素材档案</h3>
+                    <div class="row row2">
+                        <h3 class="title">种类</h3>
+                        <ul class="list">
+                            {% for t in tags %}
+                            {% if t.category=="1" %}
+                            <li class="item">{{t.name}}</li>
+                            {%  endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="row row2">
+                        <h3 class="title">色彩</h3>
+                        <ul class="list">
+                            {% for t in tags %}
+                            {% if t.category=="2" %}
+                            <li class="item">{{t.name}}</li>
+                            {%  endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="row row2">
+                        <h3 class="title">构图</h3>
+                        <ul class="list">
+                            {% for t in tags %}
+                            {% if t.category=="3" %}
+                            <li class="item">{{t.name}}</li>
+                            {%  endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="row row2">
+                        <h3 class="title">功能</h3>
+                        <ul class="list">
+                            {% for t in tags %}
+                            {% if t.category=="4" %}
+                            <li class="item">{{t.name}}</li>
+                            {%  endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="row row2">
+                        <h3 class="title">格式</h3>
+                        <ul class="list">
+                            {% for t in tags %}
+                            {% if t.category=="5" %}
+                            <li class="item">{{t.name}}</li>
+                            {%  endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <a class="link" target="_blank" href="fixtures/{{fixture.id}}/download">下载</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    {% include "frontend/footer.html" %}
+</div>
+<script src="static/frontend/js/lib/jquery-1.11.1.min.js"></script>
+<script src="static/frontend/js/lib/jquery.flexslider-min.js"></script>
+<script src="static/frontend/js/src/config.js"></script>
+<script src="static/frontend/js/src/functions.js"></script>
+<script src="static/frontend/js/src/single.js"></script>
+</body>
+</html>

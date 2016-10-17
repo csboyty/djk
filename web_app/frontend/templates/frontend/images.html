@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include "frontend/head.html" %}
+    <link type="text/css" href="static/frontend/css/lib/jquery.toastmessage.css" rel="stylesheet">
+    <link type="text/css" href="static/frontend/css/lib/flexslider.css" rel="stylesheet">
+    <link type="text/css" href="static/frontend/css/src/main.css" rel="stylesheet">
+    <script>
+        var pageName="about";
+    </script>
+</head>
+<body>
+<script type="text/template" id="tyPhotoTpl">
+    {@each results as r}
+    <li>
+        <img data-name="${r.name}" data-intro="${r.intro}" src="${r.url}" />
+    </li>
+    {@/each}
+</script>
+<div class="wrapper">
+
+    {% include "frontend/header.html" %}
+
+    <div class="main main1">
+        <div class="content" style="padding-bottom: 40px;">
+            <div class="navTip">
+                <span class="item">关于侗锦</span>
+                <span class="item">&gt;</span>
+                <span class=" item current">侗锦图库</span>
+            </div>
+
+            <div class="tyPhotoDetail" id="tyPhotoDetail">
+                <img src="{{images[0]['url']}}">
+                <p class="name">{{images[0]['name']}}:{{images[0]['intro']}}</p>
+                <p class="page"><span id="currentPage">1</span>&nbsp;/&nbsp;{{count}}</p>
+            </div>
+            <div class="tyPhotos" id="tyPhotos">
+                <span data-direction="up" class="nav nav1 ">向上</span>
+                <ul class="list">
+                    {% for i in images %}
+                    <li>
+                        <img data-name="{{i.name}}" data-intro="{{i.intro}}" src="{{i.url}}" />
+                    </li>
+                    {% endfor %}
+                </ul>
+                <span data-direction="down" class="nav nav2 hidden">向下</span>
+            </div>
+        </div>
+    </div>
+
+    {% include "frontend/footer.html" %}
+</div>
+<script src="static/frontend/js/lib/jquery-1.11.1.min.js"></script>
+<script src="static/frontend/js/lib/jquery.toastmessage.js"></script>
+<script src="static/frontend/js/lib/juicer-min.js"></script>
+<script src="static/frontend/js/src/config.js"></script>
+<script src="static/frontend/js/src/functions.js"></script>
+<script src="static/frontend/js/src/images.js"></script>
+</body>
+</html>
